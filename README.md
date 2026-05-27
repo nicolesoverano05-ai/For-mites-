@@ -86,6 +86,72 @@
         .btn {
             padding: 12px 25px;
             font-size:
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center;
+        }
+
+        .invite-container {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 24px rgba(143,95,210, 0.18);
+            padding: 36px 26px 26px 26px;
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            border: 3px solid var(--accent-lavender);
+            box-sizing: border-box;
+        }
+
+        .heart {
+            font-size: 2.3em;
+            color: var(--heart-pink);
+            animation: pulse 1.2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1);}
+            50% { transform: scale(1.18);}
+        }
+
+        h1 {
+            margin: 0.3em 0 0.1em;
+            color: var(--primary-purple);
+            font-size: 2em;
+        }
+
+        .msg {
+            background: var(--light-purple);
+            border-left: 4px solid var(--primary-purple);
+            padding: 15px;
+            margin: 20px 0 26px 0;
+            border-radius: 0 9px 9px 0;
+            font-size: 0.95em;
+            font-weight: 500;
+            text-align: left;
+            line-height: 1.6;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .question {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--dark-text);
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            position: relative;
+            height: 50px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            font-size:
             padding: 0;
             min-height: 100vh;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
