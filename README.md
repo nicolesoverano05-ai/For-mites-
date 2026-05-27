@@ -276,7 +276,7 @@
             Hi! Alam kong busy ka at gusto ko lang malaman kung pwede pa akong mag-ask ng date—purple lover & moon cat. Aalagaan mo sarili mo, ha? Sana bigyan mo pa ako ng chance na mapasaya ka. Kahit once (or thrice, or lagi) ulit.
         </div>
         
-        <div id="mainQuestion" class="question">Are you available to go out? <span style="font-size:1.4em;">🥺💜</span></div>
+        <div id="mainQuestion" class="question">Are you available to go out? <span style="font-size:1.4em;">💜</span></div>
         
         <div class="btns" id="actions">
             <button class="btn" id="yesBtn" onclick="acceptDate()">Yes</button>
