@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Mites 💜</title>
+    <style>
+        :root {
+            --primary-purple: #8f5fd2;
+            --light-purple: #f5eafe;
+            --accent-lavender: #b39ddb;
+            --dark-text: #44355b;
+            --heart-pink: #ff90c2;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--light-purple), #e4c6f5 90%);
+            color: var(--dark-text);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center;
+        }
+
+        .invite-container {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 24px rgba(143,95,210, 0.18);
+            padding: 36px 26px 26px 26px;
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            border: 3px solid var(--accent-lavender);
+            box-sizing: border-box;
+        }
+
+        .heart {
+            font-size: 2.3em;
+            color: var(--heart-pink);
+            animation: pulse 1.2s infinite;
+        }
+        @keyframes pulse {
+            0%,
+            margin: 0 0 30px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95em;
+            text-align: left;
+            line-height: 1.6;
+            color: var(--dark-text);
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
+        }
+
+        .question {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: var(--primary-purple);
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            position: relative;
+            height: 50px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            font-size: 15px;
+            font-weight: 600;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        #yesBtn {
+            background-color: var(--primary-purple);
+            color: white;
+            box-shadow: 0 4px 12px rgba(106, 60, 188, 0.2);
+        }
+
+        #yesBtn:hover {
+            background-color: #552FA0;
+            transform: translateY(-2px);
+        }
+
+        #noBtn {
+            background-color: #EBEAED;
+            color: #6A6770;
+            position: absolute;
+            right: 60px;
+        }
+
+        .calendar-section {
+            margin: 20px 0;
+            display: none;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--dark-text);
+        }
+
+        input[type="date"] {
+            padding: 12px;
+            border: 1.5px solid var(--accent-lavender);
+            border-radius: 8px;
+            font
