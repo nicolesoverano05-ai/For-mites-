@@ -1,30 +1,203 @@
-# For-mites-
-Sincere love for her
+<!--
+This README.md is styled as a lovely date invitation
+for a very special girl who loves purple.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Mites 💜</title>
+    <title>Hi, Mites 💜 | A Purple Date Invitation</title>
     <style>
         :root {
-            --primary-purple: #7D56A5;
-            --light-purple: #F3EAFB;
-            --accent-lavender: #B39DDB;
-            --dark-text: #4A3E56;
+            --primary-purple: #8f5fd2;
+            --light-purple: #f5eafe;
+            --accent-lavender: #b39ddb;
+            --dark-text: #44355b;
+            --heart-pink: #ff90c2;
         }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--light-purple);
+            background: linear-gradient(135deg, var(--light-purple), #e4c6f5 90%);
             color: var(--dark-text);
             margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            padding: 0;
             min-height: 100vh;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+        }
+
+        .invite-container {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 24px rgba(143,95,210, 0.18);
+            padding: 36px 26px 26px 26px;
+            margin: 35px 0;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            border: 3px solid var(--accent-lavender);
+            position: relative;
+        }
+
+        .heart {
+            font-size: 2.3em;
+            color: var(--heart-pink);
+            animation: pulse 1.2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1);}
+            50% { transform: scale(1.18);}
+        }
+
+        h1 {
+            margin: 0.3em 0 0.1em;
+            color: var(--primary-purple);
+            font-size: 2em;
+        }
+        .tiny-note {
+            font-size: 11px;color: #9370b8;margin-top:13px;
+        }
+        .msg {
+            background: var(--light-purple);
+            border-left: 4px solid var(--primary-purple);
+            padding: 15px;
+            margin: 20px 0 26px 0;
+            border-radius: 0 9px 9px 0;
+            font-size: 1em;
+            font-weight: 500;
+            text-align: left;
+        }
+        .question {
+            color: var(--primary-purple);
+            font-weight: 700;
+            font-size: 1.2em;
+            margin-bottom: 24px;
+        }
+        .btns {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            align-items: center;
+        }
+        .btn {
+            padding: 11px 23px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 24px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        #yesBtn {
+            background: var(--primary-purple); color: white;
+        }
+        #yesBtn:hover { background:#723dbb;}
+        #noBtn {
+            background: #efecf6; color: #888;}
+        #noBtn:hover {
+            background: #f8c7e3; color:#E54;
+        }
+
+        /* Animated "No" button: */
+        #noBtn {position:relative;}
+        .calendar-section {
+            margin:22px 0;
+            display:none;
+        }
+        label {
+            display: block; margin-bottom: 7px;
+            font-weight:600; font-size:15px;color: var(--dark-text);
+        }
+        input[type="date"] {
+            background:#faf6ff;
+            border: 2px solid var(--accent-lavender);
+            border-radius:8px;padding:10px;
+            font-size:17px;color: var(--dark-text);
+        }
+        input[type="date"]:focus { border-color: var(--primary-purple);}
+        #submitDateBtn {
+            margin-top: 17px;
+            background-color: var(--primary-purple);
+            color: white;
+            display: none;
+        }
+        .success-message {
+            display: none;
+            color: #54c374;
+            font-weight: 600;
+            margin-top: 19px;
+            font-size: 1.07em;
+        }
+        .footer {
+            font-size: 10.5px;
+            color: #a194b2;
+            margin-top: 28px;
+        }
+    </style>
+</head>
+<body>
+    <div class="invite-container">
+        <div class="heart">💜</div>
+        <h1>For Mites</h1>
+        <div class="tiny-note">the only girl I want to go out with</div>
+
+        <div class="msg">
+            Hi! Alam kong busy ka at gusto ko lang malaman kung pwede pa akong mag-ask ng date—purple lover & moon cat. Aalagaan mo sarili mo, ha? Sana bigyan mo pa ako ng chance na mapasaya ka. Kahit once (or thrice, or lagi) ulit.
+        </div>
+        
+        <div id="mainQuestion" class="question">Are you available to go out? <span style="font-size:1.4em;">🥺💜</span></div>
+        
+        <div class="btns" id="actions">
+            <button class="btn" id="yesBtn" onclick="acceptDate()">Yes</button>
+            <button class="btn" id="noBtn" onmouseover="moveNoButton()" onclick="moveNoButton()">No</button>
+        </div>
+
+        <div class="calendar-section" id="calendarSection">
+            <label for="datePicker">Pick a date (kahit tentative):</label>
+            <input type="date" id="datePicker" onchange="showSubmitButton()">
+            <br>
+            <button class="btn" id="submitDateBtn" onclick="confirmDate()">Confirm</button>
+        </div>
+        <div class="success-message" id="successMessage"></div>
+        <div class="footer">
+            • Jan 5, 2026 • Choco Butternut • Sweet & Spicy Adobo • Purple & Moon 🐾
+        </div>
+    </div>
+    <script>
+        function moveNoButton() {
+            const noBtn = document.getElementById('noBtn');
+            const container = document.querySelector('.invite-container');
+            const rect = container.getBoundingClientRect();
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        }
+        function acceptDate() {
+            document.getElementById('mainQuestion').innerHTML = "Yay! I can't wait to see you 🌸";
+            document.getElementById('actions').style.display = 'none';
+            document.getElementById('calendarSection').style.display = 'block';
+        }
+        function showSubmitButton() {
+            document.getElementById('submitDateBtn').style.display = 'inline-block';
+        }
+        function confirmDate() {
+            const chosenDate = document.getElementById('datePicker').value;
+            if (!chosenDate) return;
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const dateObject = new Date(chosenDate);
+            const formattedDate = dateObject.toLocaleDateString('en-US', options);
+
+            document.getElementById('calendarSection').style.display = 'none';
+            const finalMsg = document.getElementById('successMessage');
+            finalMsg.innerHTML = `YAY! ❤️ Marked <b>${formattedDate}</b> as our purple date. <br>Take a screenshot and send to me plss!`;
+            finalMsg.style.display = 'block';
+        }
+    </script>
+</body>
+</html>            min-height: 100vh;
         }
 
         .container {
